@@ -1,0 +1,30 @@
+{% extends "myshop/base.html" %}
+{% load static %}
+
+{% block title %}
+<title>{{ remera.marca }} - Detalle</title>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            {% if remera.imagen %}
+                <img src="{{ remera.imagen.url }}" class="card-img-top" alt="Imagen de {{ remera.marca }}">
+            {% else %}
+                <img src="{% static 'myshop/sin_imagen.png' %}" class="card-img-top" alt="Sin imagen disponible">
+            {% endif %}
+            <div class="card-body">
+                <h4 class="card-title mb-3">{{ remera.marca }}</h4>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item"><strong>Talle:</strong> {{ remera.get_talle_display }}</li>
+                    <li class="list-group-item"><strong>Color:</strong> {{ remera.color }}</li>
+                    <li class="list-group-item"><strong>Lisa:</strong> {{ remera.get_lisa_display }}</li>
+                    <li class="list-group-item"><strong>Género:</strong> {{ remera.get_genero_display }}</li>
+                </ul>
+                <a href="{% url 'index' %}" class="btn btn-secondary">Volver al listado</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
