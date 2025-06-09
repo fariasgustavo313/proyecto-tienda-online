@@ -35,27 +35,39 @@ Gustavo Farías | Desarrollador Backend
 
 ### 1. Clona el repositorio
 ```bash
-git clone https://github.com/tu_usuario/tu_repositorio.git
-cd tu_repositorio
+git clone https://github.com/fariasgustavo313/proyecto-tienda-online.git
+cd proyecto-tienda-online
+```
 
 ### 2. Crea un entorno virtual
+```bash
 python -m venv venv
 source venv/bin/activate  # En Windows: venv\Scripts\activate
+```
 
 ### 3. Instala las dependencias
+```bash
 pip freeze > requirements.txt
 pip install -r requirements.txt
+```
 
 ### 4. Aplica migraciones
+```bash
 python manage.py migrate
+```
 
 ### 5. Crea un superusuario (opcional)
+```bash
 python manage.py createsuperuser
+```
 
 ### 6. Corre el servidor
+```bash
 python manage.py runserver
+```
 
 ## Estructura del proyecto
+```bash
 proyecto_integrador_shop/
 │
 ├── myshop/
@@ -78,3 +90,4 @@ proyecto_integrador_shop/
 ├── db.sqlite3
 ├── manage.py
 └── README.md
+```
